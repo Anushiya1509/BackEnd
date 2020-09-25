@@ -1,9 +1,6 @@
-var rectangle = {
+const { required } = require("joi");
 
-    perimeter: (x,y) => (2*(x+y)),
-    area: (x,y) => (x*y)
-
-};
+var rectangle = require('./rectangle');
 
 function solve(l,b) {
 
