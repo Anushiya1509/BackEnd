@@ -1,17 +1,16 @@
-const { required } = require("joi");
-
 var rectangle = require('./rectangle');
 
 function solve(l,b) {
 
     console.log(`Length = ${l} Breadth = ${b}`);
-
-    if(l<=0 || b<=0)
-        console.log("Length and breadth should be greater than 0");
-    else{
-        console.log("Area of the rectangle is " + rectangle.area(l,b));
-        console.log("Perimeter of the rectangle is "+ rectangle.perimeter(l,b));
-    }
+    rectangle(l, b, (err, object) =>{
+        if(err)
+            console.log("Error: " + err.message);
+        else{
+            console.log("Area of the rectangle is " + object.area());
+            console.log("Perimeter of the rectangle is "+ object.perimeter());
+        }
+    });
 }
 
 solve(-1,1);
