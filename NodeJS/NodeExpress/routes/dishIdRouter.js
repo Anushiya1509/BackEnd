@@ -4,8 +4,9 @@ const dishIdRouter = express.Router();
 
 dishIdRouter.use(bodyParser.json());
 
-dishIdRouter.route('/')
+dishIdRouter.route('/:dishID')
 .get((req,res,next) => {
+    console.log(req.params.dishID)
     res.end('Will send details of the dish: ' + req.params.dishID +' to you!');
 })
 .post((req, res, next) => {

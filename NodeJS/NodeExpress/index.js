@@ -13,7 +13,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use('/dishes', dishRouter);
-app.use('/dishes/:dishID', dishIdRouter);
+app.use('/dishes/id', dishIdRouter);
 app.use(express.static(__dirname + "/public"));
 
 app.use((req,res)=>{
